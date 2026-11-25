@@ -56,16 +56,18 @@ public class Conexao {
     public Statement stmt;
     public ResultSet rs;
     protected String login = "root";
-    protected String senha = "senha-de-estudo";
-    protected String porta = "3306";
+    protected String senha = "sgemp123";
+    protected String porta = "3307";
     Config config = new Config();
 
     public void conectar() {
         XStream xstream = new XStream(new DomDriver());
         xstream.alias("Servidor", Config.class);
         try {
-            config = (Config) xstream.fromXML(new FileInputStream(new File("C:\\sgemp\\config\\config.xml")));
-        } catch (FileNotFoundException ex) {
+            //config = (Config) xstream.fromXML(new FileInputStream(new File("C:\\sgemp\\config\\config.xml")));
+            config = (Config) xstream.fromXML(new FileInputStream(new File(System.getProperty("sgemp.config", System.getProperty("user.home") + "/sgemp-config/config.xml"))));
+            System.out.println("config:"+ config);
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Conectar! \nERRO:" + ex, "ERRO", JOptionPane.ERROR_MESSAGE);
         }
 
