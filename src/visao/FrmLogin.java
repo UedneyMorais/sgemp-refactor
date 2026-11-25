@@ -388,7 +388,7 @@ public final class FrmLogin extends javax.swing.JFrame {
 
     public void verificaVersao() {
         try {
-            conn.executaSQL("SELECT versao FROM PARAMETRO");
+            conn.executaSQL("SELECT versao FROM parametro");
             conn.rs.next();
             jLabelVersao.setText(conn.rs.getString("versao"));
             conn.desconectar();
