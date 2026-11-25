@@ -5,6 +5,10 @@
 
 Este repositório é a cópia de trabalho do **SGEMP**, um ERP desktop (Swing + JDBC + MySQL/MariaDB) que escrevi em 2019, sem testes e sem preocupação com arquitetura. Ele nunca foi para produção. Hoje serve de laboratório: estou usando o código real, com os problemas reais dele, para aprender os princípios **SOLID** em Java, refatorando um passo de cada vez.
 
+## A ideia
+
+Escrevi este sistema em 2019, ainda aprendendo, e cometi vários erros de design: tudo misturado na tela, SQL colado em texto, conexão criada em qualquer lugar, nenhum teste. Em vez de jogar fora e recomeçar, vou **ir refatorando aos poucos e corrigindo os erros que cometi no passado**, mostrando cada correção. O código ruim fica à mostra de propósito: é dele que vem o aprendizado.
+
 ## O que é isto
 
 - O código original foi mantido como estava, com poucas correções para rodar no Linux e com o Java atual.
@@ -37,6 +41,7 @@ Estes são os problemas que quero resolver durante o estudo, então **não são 
 - Senha de usuário com MD5 sem salt.
 - Nomes de tabela em maiúscula nas consultas: funcionam no Windows, mas quebram em MySQL/MariaDB no Linux.
 - Nenhum teste automatizado.
+- `Conexao` ainda tem `login`, `senha` e `porta` fixos no código (valores do banco local de estudo). O `config.xml` hoje só fornece `host` e `banco`. Passar o resto para o `config.xml` é a próxima correção.
 
 ## Como rodar (ambiente de estudo)
 
@@ -55,7 +60,7 @@ Requisitos: JDK (testado com 25) e um MySQL/MariaDB local. O build original é A
    </Servidor>
    ```
 
-   Por padrão o código procura `~/sgemp-config/config.xml`. Para outro caminho, use `-Dsgemp.config=/caminho/config.xml`.
+   Por enquanto só `host` e `banco` são lidos do arquivo; `login`, `senha` e `porta` estão fixos em `Conexao.java` e precisam bater com o seu banco local (veja "Problemas conhecidos"). Por padrão o código procura `~/sgemp-config/config.xml`. Para outro caminho, use `-Dsgemp.config=/caminho/config.xml`.
 3. **VM options:** o XStream 1.4.7 usado aqui é de 2014 e precisa destas flags no Java 17+:
 
    ```
