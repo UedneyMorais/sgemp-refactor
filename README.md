@@ -3,11 +3,11 @@
 > **Projeto de estudo. O código aqui é legado e está sendo refatorado de propósito.**
 > Não é um produto, não foi pensado para uso real e **não deve ser usado em produção**.
 
-Este repositório é a cópia de trabalho do **SGEMP**, um ERP desktop (Swing + JDBC + MySQL/MariaDB) que escrevi em 2019, sem testes e sem preocupação com arquitetura. Ele nunca foi para produção. Hoje serve de laboratório: estou usando o código real, com os problemas reais dele, para aprender os princípios **SOLID** em Java, refatorando um passo de cada vez.
+Este repositório é a cópia de trabalho do **SGEMP**, um ERP desktop (Swing + JDBC + MySQL/MariaDB) que comecei a escrever por volta de 2014, sem testes e sem preocupação com arquitetura. Ele nunca foi para produção. Hoje serve de laboratório: estou usando o código real, com os problemas reais dele, para aprender os princípios **SOLID** em Java, refatorando um passo de cada vez.
 
 ## A ideia
 
-Escrevi este sistema em 2019, ainda aprendendo, e cometi vários erros de design: tudo misturado na tela, SQL colado em texto, conexão criada em qualquer lugar, nenhum teste. Em vez de jogar fora e recomeçar, vou **ir refatorando aos poucos e corrigindo os erros que cometi no passado**, mostrando cada correção. O código ruim fica à mostra de propósito: é dele que vem o aprendizado.
+Comecei este sistema por volta de 2014, ainda aprendendo. Na época eu não conhecia git: fui guardando o projeto em cópias, por anos, entre uma formatação de máquina e outra. Por isso o histórico anterior não existe, e o repositório começa do código como ele estava. Cometi vários erros de design: vários erros de design: tudo misturado na tela, SQL colado em texto, conexão criada em qualquer lugar, nenhum teste. Em vez de jogar fora e recomeçar, vou **ir refatorando aos poucos e corrigindo os erros que cometi no passado**, mostrando cada correção. O código ruim fica à mostra de propósito: é dele que vem o aprendizado.
 
 ## O que é isto
 
