@@ -1,0 +1,7 @@
+build/
+dist/
+velho/
+Database/
+*.jar
+!lib/*.jar
+nbproject/private/
