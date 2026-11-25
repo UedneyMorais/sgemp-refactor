@@ -31,10 +31,6 @@ public class HashMd5Test {
 
 private static final String HASH_ATUAL_DE_ABC = "90150983cd24fb0d6963f7d28e17f72";
    
-    
-    
-    
-    
     @Test
      void deveRetornarHashSemZeroDoByteBaixo_quandoEntradaEAbc() {
         // Arrange: prepara a entrada
