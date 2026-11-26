@@ -6,6 +6,7 @@ package controle;
 
 import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -70,4 +71,26 @@ public class ValidaCPFTest {
         assertEquals(false, isCPF);
     }
     
+    @Test
+    void deveRetornarCpfFormatado_quandoReceber11Caracteres(){
+          String cpf = "12345678902";
+          
+          String cpfFormatado = ValidaCPF.imprimeCPF(cpf);
+          
+          assertEquals("123.456.789-02", cpfFormatado);
+    }
+    
+    @Test
+    void deveCausarException_quandoReceberMenosDe11Caracteres() {
+        String cpf = "1234567890";
+      
+       assertThrows(StringIndexOutOfBoundsException.class, ()-> ValidaCPF.imprimeCPF(cpf)); 
+    }
+    
+    @Test
+    void deveRetornarCpfFormatado_quandoReceberMaisDe11Caracteres() {
+        String cpf = "123456789099";
+        String cpfFormatado = ValidaCPF.imprimeCPF(cpf);
+        assertEquals("123.456.789-09", cpfFormatado);
+    }
 }

@@ -52,7 +52,6 @@ private static final String HASH_ATUAL_DE_ABC = "90150983cd24fb0d6963f7d28e17f72
          String hashGerado = HashMd5.HashMd5(entrada);
          
          assertEquals(31, hashGerado.length());
-         
      }
 
 
