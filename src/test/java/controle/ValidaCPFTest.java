@@ -53,11 +53,8 @@ public class ValidaCPFTest {
     
     @Test
     void deveRejeitar_quandoPrimeiroDigitoVerificadorEstaErrado(){
-        String cpf = "12345678902";
-        char[] cpfChar = cpf.toCharArray();
-        cpfChar[9] = '6';
         
-        cpf= String.valueOf(cpfChar);
+        String cpf= "12345678917";
         
         boolean isCPF = ValidaCPF.isCPF(cpf);
         
@@ -66,11 +63,7 @@ public class ValidaCPFTest {
     
     @Test
     void deveRejeitar_quandoSegundoDigitoVerificadorEstaErrado(){
-        String cpf = "12345678909";
-        char[] cpfChar = cpf.toCharArray();
-        cpfChar[10] = '2';
-        
-        cpf= String.valueOf(cpfChar);
+        String cpf = "12345678902";
         
         boolean isCPF = ValidaCPF.isCPF(cpf);
         
